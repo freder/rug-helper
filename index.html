@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title></title>
+		<style>
+			body {
+				display: flex;
+				flex-direction: row;
+				font-size: 20px;
+				font-family: sans-serif;
+			}
+
+			#container {
+				padding-left: 1em;
+			}
+
+			canvas {
+				image-rendering: optimizeSpeed;
+				image-rendering: -moz-crisp-edges;
+				image-rendering: -webkit-optimize-contrast;
+				image-rendering: -o-crisp-edges;
+				image-rendering: pixelated;
+				-ms-interpolation-mode: nearest-neighbor;
+				zoom: 5;
+			}
+
+			#swatch {
+				width: 200px;
+				height: 200px;
+				display: inline-block;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<canvas></canvas>
+		</div>
+		<div id="container">
+			<div id="swatch"></div>
+		</div>
+		<script src="index.js"></script>
+	</body>
+</html>
