@@ -76,9 +76,9 @@ const main = (img) => {
 		if (firstTime) {
 			firstTime = false;
 			let counter = 0;
-			for (let xx = 0; xx < img.width; xx++) {
-				for (let yy = 0; yy < img.height; yy++) {
-					const color = getCssColorAt(xx, yy, img, pixels);
+			for (let yy = 0; yy < img.height; yy++) {
+				for (let xx = 0; xx < img.width; xx++) {
+					const color = getCssColorAt(xx, yy, img.width, pixels);
 					incrementOrSetTo(histoData.histo, color, 1);
 					if (counter <= i) {
 						incrementOrSetTo(histoData.histoUsed, color, 1);
@@ -103,9 +103,9 @@ const main = (img) => {
 		} else {
 			histoData.histoUsed = {};
 			let counter = 0;
-			for (let xx = 0; xx < img.width; xx++) {
-				for (let yy = 0; yy < img.height; yy++) {
-					const color = getCssColorAt(xx, yy, img, pixels);
+			for (let yy = 0; yy < img.height; yy++) {
+				for (let xx = 0; xx < img.width; xx++) {
+					const color = getCssColorAt(xx, yy, img.width, pixels);
 					if (counter <= i) {
 						incrementOrSetTo(histoData.histoUsed, color, 1);
 					}
