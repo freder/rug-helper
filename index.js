@@ -23,13 +23,12 @@ const updateElem = (elem, total, used = 0) => {
 	elem.innerText = `${total}: ${used}`;
 };
 
-function getCssColorAt(xx, yy, img, pixels) {
-	const idx = getIndex(xx, yy, img.width);
+function getCssColorAt(xx, yy, width, pixels) {
+	const idx = getIndex(xx, yy, width);
 	const r = pixels.data[idx];
 	const g = pixels.data[idx + 1];
 	const b = pixels.data[idx + 2];
-	const color = makeCssColor(r, g, b);
-	return color;
+	return makeCssColor(r, g, b);
 }
 
 const incrementOrSetTo = (obj, key, val = 1) => {
@@ -86,7 +85,6 @@ const main = (img) => {
 					counter++;
 				}
 			}
-
 			Object.keys(histoData.histo).forEach((color) => {
 				const count = histoData.histo[color];
 				const elem = document.createElement('div');
@@ -94,9 +92,7 @@ const main = (img) => {
 				const fraction = count / (img.width * img.height);
 				elem.style.width = `${fraction * 2.5 * 100}%`;
 				elem.style.background = color;
-				elem.style.color = 'white';
-				elem.style.fontSize = '12px';
-				elem.style.padding = '3px';
+				elem.className = 'histo-item';
 				container.appendChild(elem);
 				updateElem(elem, count, histoData.histoUsed[color]);
 			});
