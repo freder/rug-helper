@@ -152,6 +152,15 @@ const main = (img) => {
 		if (key === 'ArrowRight') {
 			i += 1;
 		}
+		if (key === 'ArrowDown') {
+			i += img.width;
+		}
+		if (key === 'ArrowUp') {
+			const newI = i - img.width;
+			if (newI >= 0) {
+				i = newI;
+			}
+		}
 		update(i);
 	});
 };
