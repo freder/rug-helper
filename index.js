@@ -20,7 +20,7 @@ const makeCssColor = (r, g, b) => {
 };
 
 const updateElem = (elem, total, used = 0) => {
-	elem.innerText = `${total}: ${used}`;
+	elem.innerText = `${used} / ${total}`;
 };
 
 function getCssColorAt(xx, yy, width, pixels) {
